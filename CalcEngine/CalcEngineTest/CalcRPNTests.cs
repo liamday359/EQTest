@@ -8,6 +8,7 @@ namespace CalcEngineTest
     {
         [TestCase(3, CalcOperatorType.Addition, 2, 5)] // 3 + 2
         [TestCase(5, CalcOperatorType.Subtraction, 10, -5)] // 5 - 10
+        [TestCase(1, CalcOperatorType.Subtraction, -1, 2)] // 1 - -1
         [TestCase(3.2, CalcOperatorType.Multiplication, 20, 64)] // 3.2 * 20
         [TestCase(6, CalcOperatorType.Division, 0.5, 12)] // 6 / 0.5
         public void TwoOperands(double op1, CalcOperatorType calcType, double op2, double result)

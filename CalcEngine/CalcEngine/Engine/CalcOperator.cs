@@ -15,11 +15,37 @@ namespace CalcEngine.Engine
 
     public class CalcOperator
     {
-        public CalcOperatorType OperatorType { get; set; }
+        public CalcOperatorType OperatorType { get; }
 
         public CalcOperator(CalcOperatorType typeIn)
         {
             OperatorType = typeIn;
+        }
+
+        public CalcOperator(string token)
+        {
+            switch (token.Trim().ToUpper())
+            {
+                case "+":
+                    OperatorType = CalcOperatorType.Addition;
+                    break;
+
+                case "-":
+                    OperatorType = CalcOperatorType.Subtraction;
+                    break;
+
+                case "/":
+                    OperatorType = CalcOperatorType.Division;
+                    break;
+
+                case "*":
+                case "X":
+                    OperatorType = CalcOperatorType.Multiplication;
+                    break;
+
+                default:
+                    throw new Exception("Invalid operator token.");
+            }
         }
 
         public short Precedence
