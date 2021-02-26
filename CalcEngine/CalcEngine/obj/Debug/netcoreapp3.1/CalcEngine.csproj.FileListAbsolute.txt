@@ -17,3 +17,4 @@ C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngine\obj\Debug\netcoreapp3.1\CalcEn
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngine\obj\Debug\netcoreapp3.1\CalcEngine.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngine\obj\Debug\netcoreapp3.1\CalcEngine.pdb
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngine\obj\Debug\netcoreapp3.1\CalcEngine.genruntimeconfig.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngine\obj\Debug\netcoreapp3.1\CalcEngine.csprojAssemblyReference.cache
