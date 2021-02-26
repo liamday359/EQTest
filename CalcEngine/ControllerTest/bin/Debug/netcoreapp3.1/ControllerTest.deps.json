@@ -867,8 +867,16 @@
         }
       },
       "CalcEngine/1.0.0": {
+        "dependencies": {
+          "LibCalcEngine": "1.0.0"
+        },
         "runtime": {
           "CalcEngine.dll": {}
+        }
+      },
+      "LibCalcEngine/1.0.0": {
+        "runtime": {
+          "LibCalcEngine.dll": {}
         }
       }
     }
@@ -1321,6 +1329,11 @@
       "hashPath": "system.xml.xpath.xmldocument.4.3.0.nupkg.sha512"
     },
     "CalcEngine/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "LibCalcEngine/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

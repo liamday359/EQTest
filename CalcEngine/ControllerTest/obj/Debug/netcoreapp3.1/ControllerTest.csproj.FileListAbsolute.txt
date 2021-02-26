@@ -99,3 +99,5 @@ C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\obj\Debug\netcoreapp3.1\Co
 C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.pdb
 C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\obj\Debug\netcoreapp3.1\ControllerTest.genruntimeconfig.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\bin\Debug\netcoreapp3.1\LibCalcEngine.dll
+C:\Users\Liam\EQTest\EQTest\CalcEngine\ControllerTest\bin\Debug\netcoreapp3.1\LibCalcEngine.pdb

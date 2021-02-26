@@ -1229,6 +1229,9 @@
       "CalcEngine/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "LibCalcEngine": "1.0.0"
+        },
         "compile": {
           "bin/placeholder/CalcEngine.dll": {}
         },
@@ -1238,6 +1241,16 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "LibCalcEngine/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/LibCalcEngine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibCalcEngine.dll": {}
+        }
       }
     }
   },
@@ -4631,6 +4644,11 @@
       "type": "project",
       "path": "../CalcEngine/CalcEngine.csproj",
       "msbuildProject": "../CalcEngine/CalcEngine.csproj"
+    },
+    "LibCalcEngine/1.0.0": {
+      "type": "project",
+      "path": "../LibCalcEngine/LibCalcEngine.csproj",
+      "msbuildProject": "../LibCalcEngine/LibCalcEngine.csproj"
     }
   },
   "projectFileDependencyGroups": {

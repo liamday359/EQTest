@@ -1,0 +1,7 @@
+CalcEngine\CalcEngine\bin\*
+CalcEngine\CalcEngine\obj\*
+CalcEngine\CalcEngineTest\obj\*
+CalcEngine\ControllerTest\bin\*
+CalcEngine\ControllerTest\obj\*
+CalcEngine\LibCalcEngine\bin\*
+CalcEngine\LibCalcEngine\obj\*
