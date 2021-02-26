@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+using System.Collections;
+using NUnit.Framework;
 using CalcEngine;
 using CalcEngine.Engine;
 
@@ -40,6 +42,16 @@ namespace CalcEngineTest
             Assert.AreEqual(((CalcOperator)tokenList[3]).OperatorType, calcType2);
             Assert.AreEqual(tokenList[4], op3);
 
+        }
+
+        [TestCase("2 D 3")]
+        public void ParseException(string parseString)
+        {
+            var sut = new Parser();
+
+            ArrayList x;
+            var ex = Assert.Throws<Exception>(() => x = sut.Parse(parseString));
+            Assert.AreEqual("Invalid operator token.", ex.Message);
         }
 
     }

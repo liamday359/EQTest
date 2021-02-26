@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+﻿using System;
+using NUnit.Framework;
 using CalcEngine;
 using CalcEngine.Engine;
 
@@ -29,6 +30,27 @@ namespace CalcEngineTest
             CalcOperator calcop1 = new CalcOperator(op1);
             CalcOperator calcop2 = new CalcOperator(op2);
             Assert.AreNotEqual(calcop1.Precedence, calcop2.Precedence);
+        }
+
+        [TestCase("+", CalcOperatorType.Addition)]
+        [TestCase("-", CalcOperatorType.Subtraction)]
+        [TestCase("*", CalcOperatorType.Multiplication)]
+        [TestCase("x", CalcOperatorType.Multiplication)]
+        [TestCase("/", CalcOperatorType.Division)]
+        public void ParsedOperator(string operatorString, CalcOperatorType op)
+        {
+            CalcOperator calcOp = new CalcOperator(operatorString);
+            Assert.AreEqual(calcOp.OperatorType, op);
+        }
+
+        [TestCase("t")]
+        [TestCase("10")]
+        [TestCase("&")]
+        public void ParseException(string parseString)
+        {
+            CalcOperator x;
+            var ex = Assert.Throws<Exception>(() => x = new CalcOperator(parseString));
+            Assert.AreEqual("Invalid operator token.", ex.Message);
         }
 
     }
