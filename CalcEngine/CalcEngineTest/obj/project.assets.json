@@ -1226,22 +1226,6 @@
           "lib/netstandard1.3/System.Xml.XPath.XmlDocument.dll": {}
         }
       },
-      "CalcEngine/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "LibCalcEngine": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/CalcEngine.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/CalcEngine.dll": {}
-        },
-        "frameworkReferences": [
-          "Microsoft.AspNetCore.App"
-        ]
-      },
       "LibCalcEngine/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -4640,11 +4624,6 @@
         "system.xml.xpath.xmldocument.nuspec"
       ]
     },
-    "CalcEngine/1.0.0": {
-      "type": "project",
-      "path": "../CalcEngine/CalcEngine.csproj",
-      "msbuildProject": "../CalcEngine/CalcEngine.csproj"
-    },
     "LibCalcEngine/1.0.0": {
       "type": "project",
       "path": "../LibCalcEngine/LibCalcEngine.csproj",
@@ -4653,7 +4632,7 @@
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "CalcEngine >= 1.0.0",
+      "LibCalcEngine >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.5.0",
       "NUnit >= 3.12.0",
       "NUnit3TestAdapter >= 3.16.1"
@@ -4686,8 +4665,8 @@
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
           "projectReferences": {
-            "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\CalcEngine\\CalcEngine.csproj": {
-              "projectPath": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\CalcEngine\\CalcEngine.csproj"
+            "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\LibCalcEngine\\LibCalcEngine.csproj": {
+              "projectPath": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\LibCalcEngine\\LibCalcEngine.csproj"
             }
           }
         }
@@ -4726,9 +4705,6 @@
         "assetTargetFallback": true,
         "warn": true,
         "frameworkReferences": {
-          "Microsoft.AspNetCore.App": {
-            "privateAssets": "none"
-          },
           "Microsoft.NETCore.App": {
             "privateAssets": "all"
           }

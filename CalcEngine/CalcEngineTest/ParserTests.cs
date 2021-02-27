@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections;
 using NUnit.Framework;
-using CalcEngine;
-using CalcEngine.Engine;
+using LibCalcEngine;
 
 
 namespace CalcEngineTest

@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalcEngineTest", "CalcEngin
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ControllerTest", "ControllerTest\ControllerTest.csproj", "{0B586A04-87CC-4ABE-A31A-6729108462B1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LibCalcEngine", "LibCalcEngine\LibCalcEngine.csproj", "{98575241-84B6-43C1-A458-CD6B4FBB5804}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LibCalcEngine", "LibCalcEngine\LibCalcEngine.csproj", "{98575241-84B6-43C1-A458-CD6B4FBB5804}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalcClient", "CalcClient\CalcClient.csproj", "{69CEBAE3-04DB-4DCC-A95F-378328CDBCFA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{98575241-84B6-43C1-A458-CD6B4FBB5804}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98575241-84B6-43C1-A458-CD6B4FBB5804}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98575241-84B6-43C1-A458-CD6B4FBB5804}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CEBAE3-04DB-4DCC-A95F-378328CDBCFA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CEBAE3-04DB-4DCC-A95F-378328CDBCFA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CEBAE3-04DB-4DCC-A95F-378328CDBCFA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CEBAE3-04DB-4DCC-A95F-378328CDBCFA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

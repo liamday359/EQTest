@@ -1,6 +1,3 @@
-C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\appsettings.Development.json
-C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\appsettings.json
-C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\CalcEngine.exe
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\NUnit3.TestAdapter.pdb
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\nunit.engine.dll
@@ -89,8 +86,6 @@ C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\zh
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CommunicationUtilities.resources.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.TestPlatform.CrossPlatEngine.resources.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.VisualStudio.TestPlatform.Common.resources.dll
-C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\CalcEngine.dll
-C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\CalcEngine.pdb
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.csprojAssemblyReference.cache
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.AssemblyInfoInputs.cache
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.AssemblyInfo.cs
@@ -99,3 +94,5 @@ C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\Ca
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.pdb
 C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\obj\Debug\netcoreapp3.1\CalcEngineTest.genruntimeconfig.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\LibCalcEngine.dll
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcEngineTest\bin\Debug\netcoreapp3.1\LibCalcEngine.pdb

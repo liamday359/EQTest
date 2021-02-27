@@ -1,7 +1,6 @@
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\bin\Debug\netcoreapp3.1\LibCalcEngine.deps.json
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\bin\Debug\netcoreapp3.1\LibCalcEngine.dll
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\bin\Debug\netcoreapp3.1\LibCalcEngine.pdb
-C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\obj\Debug\netcoreapp3.1\LibCalcEngine.csprojAssemblyReference.cache
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\obj\Debug\netcoreapp3.1\LibCalcEngine.AssemblyInfoInputs.cache
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\obj\Debug\netcoreapp3.1\LibCalcEngine.AssemblyInfo.cs
 C:\Users\Liam\EQTest\EQTest\CalcEngine\LibCalcEngine\obj\Debug\netcoreapp3.1\LibCalcEngine.csproj.CoreCompileInputs.cache
