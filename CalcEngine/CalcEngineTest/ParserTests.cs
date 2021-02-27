@@ -9,11 +9,13 @@ namespace CalcEngineTest
     class ParserTests
     {
         [TestCase("3 + 2", 3, CalcOperatorType.Addition, 2)]
+        [TestCase("3+2", 3, CalcOperatorType.Addition, 2)]
         [TestCase("3 / 2", 3, CalcOperatorType.Division, 2)]
         [TestCase("5.0 * 7", 5, CalcOperatorType.Multiplication, 7)]
         [TestCase("5.0 x -7", 5, CalcOperatorType.Multiplication, -7)]
         [TestCase("-1 * 0", -1, CalcOperatorType.Multiplication, 0)]
         [TestCase("-1 - -7", -1, CalcOperatorType.Subtraction, -7)]
+        [TestCase("-1--7", -1, CalcOperatorType.Subtraction, -7)]
         public void TwoOperands(string parseString,  double op1, CalcOperatorType calcType, double op2)
         {
             var sut = new Parser();

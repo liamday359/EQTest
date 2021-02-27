@@ -17,7 +17,7 @@ namespace CalcClient
         {
             do
             {
-                Console.WriteLine("Enter expression (expression elements must be seperated by spaces): ");
+                Console.WriteLine("Enter expression: ");
                 var expression = Console.ReadLine();
 
                 var response = GetHttpResult(expression.Trim());
