@@ -16,7 +16,6 @@ namespace CalcEngineTest
             sut.AddNumber(op1);
             sut.AddOperator(new CalcOperator(calcType));
             sut.AddNumber(op2);
-            sut.FlushStack();
 
             Assert.AreEqual(sut.Value, result);
 
@@ -34,7 +33,6 @@ namespace CalcEngineTest
             sut.AddNumber(op2);
             sut.AddOperator(new CalcOperator(calcType2));
             sut.AddNumber(op3);
-            sut.FlushStack();
 
             Assert.AreEqual(sut.Value, result);
         }
@@ -45,10 +43,9 @@ namespace CalcEngineTest
             var sut = new CalculatorRPN();
             sut.AddNumber(op1);
             sut.AddOperator(new CalcOperator(calcType));
-            sut.FlushStack();
 
             double x;
-            var ex = Assert.Throws<CalculatorException>(() => x = sut.Value);
+            var ex = Assert.Throws<TokenException>(() => x = sut.Value);
             Assert.AreEqual("Not enough values to perform operation.", ex.Message);
         }
 
@@ -60,10 +57,9 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType));
             sut.AddNumber(op2);
             sut.AddNumber(op3);
-            sut.FlushStack();
 
             double x;
-            var ex = Assert.Throws<CalculatorException>(() => x = sut.Value);
+            var ex = Assert.Throws<TokenException>(() => x = sut.Value);
             Assert.AreEqual("Too many remaining operands.", ex.Message);
         }
 

@@ -32,7 +32,6 @@ namespace CalcClient
 
         private static async Task<String> GetHttpResult(String expression)
         {
-            int code = 0;
             String result = "";
 
             using (HttpClient httpClient = new HttpClient())
@@ -40,16 +39,15 @@ namespace CalcClient
                 httpClient.BaseAddress = new Uri($"https://localhost:44380/api/CalcEngine/");
                 var response = await httpClient.GetAsync($"?expr={HttpUtility.UrlEncode(expression)}");
 
-                code = (int)response.StatusCode;
                 var body = await response.Content.ReadAsStringAsync();
 
-                if (code >= 200 && code <= 299)
+                if (response.IsSuccessStatusCode)
                 {
                     result = $"Result: {body}";
                 }
                 else
                 {
-                    result = $"Code {code}: {body}";
+                    result = $"Code {(int)response.StatusCode}: {body}";
                 }
 
             }

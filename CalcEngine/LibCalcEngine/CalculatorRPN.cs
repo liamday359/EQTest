@@ -6,34 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibCalcEngine
 {
-    [Serializable]
-    public class CalculatorException : Exception
-    {
-        public CalculatorException()
-        { }
-
-        public CalculatorException(string message)
-            : base(message)
-        { }
-
-        public CalculatorException(string message, Exception innerException)
-            : base(message, innerException)
-        { }
-    }
-
-    public interface ICalculator
-    {
-        void AddNumber(double numberIn);
-        void AddOperator(CalcOperator operatorIn);
-        void FlushStack();
-        double Value { get; }
-    }
-
     public class CalculatorRPN : ICalculator
     {
         private Stack<CalcOperator> RPNOperatorStack = new Stack<CalcOperator>();
-        private ArrayList RPNList = new ArrayList();
-        private Stack<double> TokenStack = new Stack<double>();
+        protected ArrayList RPNList = new ArrayList();
+        protected Stack<double> TokenStack = new Stack<double>();
 
         // This is an implemention of the Shunting-yard algorithm https://en.wikipedia.org/wiki/Shunting-yard_algorithm 
         // Pushes a list of Reverse Polish Notation tokens to RPNList
@@ -51,7 +28,7 @@ namespace LibCalcEngine
             else if (RPNOperatorStack.Peek().Precedence >= operatorIn.Precedence)
             {
                 RPNList.Add(RPNOperatorStack.Pop());
-                // Keep going until stack if fully popped or operator with lower precedence is on the stack
+                // Keep going until stack is fully popped or operator with lower precedence is on the stack
                 AddOperator(operatorIn);
 
             }
@@ -61,7 +38,7 @@ namespace LibCalcEngine
             }
         }
 
-        public void FlushStack()
+        private void FlushStack()
         {
             while (RPNOperatorStack.Count > 0)
             {
@@ -69,13 +46,13 @@ namespace LibCalcEngine
             }
         }
 
-
-
         // Evaluates a list of Reverse Polish Notation tokens. See https://en.wikipedia.org/wiki/Reverse_Polish_notation
         public double Value
         {
             get
             {
+                FlushStack();
+
                 foreach (object RPNLoop in RPNList)
                 {
                     if (RPNLoop.GetType() == typeof(double))
@@ -88,7 +65,7 @@ namespace LibCalcEngine
 
                         if (TokenStack.Count < 2)
                         {
-                            throw new CalculatorException("Not enough values to perform operation.");
+                            throw new TokenException("Not enough values to perform operation.");
                         }
 
                         var oparand2 = TokenStack.Pop();
@@ -116,19 +93,19 @@ namespace LibCalcEngine
                     }
                     else
                     {
-                        throw new CalculatorException("Unknown type in list.");
+                        throw new TokenException("Unknown type in list.");
                     }
                 }
 
-                if (TokenStack.Count() > 1)
+                if (TokenStack.Count > 1)
                 {
-                    throw new CalculatorException("Too many remaining operands.");
+                    throw new TokenException("Too many remaining operands.");
                 }
 
                 return TokenStack.Pop();
             }
 
-
         }
+
     }
 }

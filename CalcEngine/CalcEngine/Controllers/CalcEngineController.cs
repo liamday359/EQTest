@@ -27,9 +27,27 @@ namespace CalcEngine.Controllers
                 return Ok(retValue);
 
             }
+            catch (TokenException ex)
+            {
+                // If the expression is formed badly then we won't be able to recover
+                return BadRequest(ex.Message);
+            }
             catch (Exception ex)
             {
-                return BadRequest(ex.Message);
+
+                try
+                {
+                    var parser = new Parser();
+                    var calculator = new CalculatorAPI();
+                    // Try the calculation again by injecting a calculator object to this function that uses the third-party API
+                    var retValue = Calculate(expr, parser, calculator);
+
+                    return Ok(retValue);
+                }
+                catch (Exception exInner)
+                {
+                    return BadRequest(exInner.Message);
+                }
             }
 
         }
@@ -37,6 +55,7 @@ namespace CalcEngine.Controllers
         private double Calculate(string calculation, IParser parser, ICalculator calculator)
         {
             ArrayList tokens = parser.Parse(calculation);
+
             foreach (var token in tokens)
             {
                 if (token.GetType() == typeof(double))
@@ -53,7 +72,6 @@ namespace CalcEngine.Controllers
                 }
             }
 
-            calculator.FlushStack();
             return calculator.Value;
 
         }

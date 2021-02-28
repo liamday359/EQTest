@@ -7,11 +7,6 @@ using System.Text.RegularExpressions;
 
 namespace LibCalcEngine
 {
-    public interface IParser
-    {
-        ArrayList Parse(string parseString);
-    }
-
     public class Parser: IParser
     {
         public ArrayList Parse(string parseString)
