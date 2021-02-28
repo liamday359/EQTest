@@ -2,6 +2,7 @@
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web;
+using Microsoft.Extensions.Configuration;
 
 namespace CalcClient
 {
@@ -18,6 +19,10 @@ namespace CalcClient
             int? precision = null;
             int parsedprecision = 0;
 
+            var builder = new ConfigurationBuilder().AddJsonFile($"appsettings.json", true, true).AddEnvironmentVariables();
+            var config = builder.Build();
+            var baseAddress = config["BaseAddress"];
+
             Console.WriteLine("Enter precision: (leave blank for no precision)");
             var enteredprecision = Console.ReadLine();
             if (int.TryParse(enteredprecision, out parsedprecision))
@@ -30,7 +35,7 @@ namespace CalcClient
                 Console.WriteLine("Enter expression: ");
                 var expression = Console.ReadLine();
 
-                var response = GetHttpResult(expression.Trim(), precision);
+                var response = GetHttpResult(baseAddress, expression.Trim(), precision);
                 response.Wait();
                 Console.WriteLine(response.Result);
                 Console.WriteLine("");
@@ -40,13 +45,13 @@ namespace CalcClient
 
         }
 
-        private static async Task<String> GetHttpResult(String expression, double? precision)
+        private static async Task<String> GetHttpResult(String baseAddress, String expression, double? precision)
         {
             String result = "";
 
             using (HttpClient httpClient = new HttpClient())
             {
-                httpClient.BaseAddress = new Uri($"https://localhost:44380/api/CalcEngine/");
+                httpClient.BaseAddress = new Uri(baseAddress);
                 String parameters = $"?expr={HttpUtility.UrlEncode(expression)}";
                 if (precision.HasValue)
                 {

@@ -49,6 +49,7 @@ namespace LibCalcEngine
 
             using (HttpClient httpClient = new HttpClient())
             {
+                // TODO : make this address configurable
                 httpClient.BaseAddress = new Uri($"http://api.mathjs.org/v4/");
                 String parameters = $"?expr={HttpUtility.UrlEncode(expression)}";
                 if (precision.HasValue)
