@@ -15,12 +15,22 @@ namespace CalcClient
 
         static void Main(string[] args)
         {
+            int? precision = null;
+            int parsedprecision = 0;
+
+            Console.WriteLine("Enter precision: (leave blank for no precision)");
+            var enteredprecision = Console.ReadLine();
+            if (int.TryParse(enteredprecision, out parsedprecision))
+            {
+                precision = parsedprecision;
+            }
+
             do
             {
                 Console.WriteLine("Enter expression: ");
                 var expression = Console.ReadLine();
 
-                var response = GetHttpResult(expression.Trim());
+                var response = GetHttpResult(expression.Trim(), precision);
                 response.Wait();
                 Console.WriteLine(response.Result);
                 Console.WriteLine("");
@@ -30,14 +40,20 @@ namespace CalcClient
 
         }
 
-        private static async Task<String> GetHttpResult(String expression)
+        private static async Task<String> GetHttpResult(String expression, double? precision)
         {
             String result = "";
 
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri($"https://localhost:44380/api/CalcEngine/");
-                var response = await httpClient.GetAsync($"?expr={HttpUtility.UrlEncode(expression)}");
+                String parameters = $"?expr={HttpUtility.UrlEncode(expression)}";
+                if (precision.HasValue)
+                {
+                    parameters += $"&precision={precision.Value}";
+                }
+
+                var response = await httpClient.GetAsync(parameters);
 
                 var body = await response.Content.ReadAsStringAsync();
 
@@ -53,7 +69,6 @@ namespace CalcClient
             }
 
             return result;
-
 
         }
     }

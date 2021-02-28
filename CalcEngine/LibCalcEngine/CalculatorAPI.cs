@@ -34,27 +34,28 @@ namespace LibCalcEngine
 
         }
 
-        public double Value
+        public double Value(int? precision = null)
         {
-            get
-            {
-                double result = 0;
+            double result = 0;
 
-                result = GetAPIValue(expression).Result;
-                return result;
-
-            }
+            result = GetAPIValue(expression, precision).Result;
+            return result;
 
         }
 
-        private static async Task<double> GetAPIValue(String expression)
+        private static async Task<double> GetAPIValue(String expression, int? precision)
         {
             double result = 0;
 
             using (HttpClient httpClient = new HttpClient())
             {
                 httpClient.BaseAddress = new Uri($"http://api.mathjs.org/v4/");
-                var response = await httpClient.GetAsync($"?expr={HttpUtility.UrlEncode(expression)}");
+                String parameters = $"?expr={HttpUtility.UrlEncode(expression)}";
+                if (precision.HasValue)
+                {
+                    parameters += $"&precision={precision.Value}";
+                }
+                var response = await httpClient.GetAsync(parameters);
 
                 // TODO: propogate the message in the response when the API returns an error
                 response.EnsureSuccessStatusCode();

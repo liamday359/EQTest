@@ -17,7 +17,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType));
             sut.AddNumber(op2);
 
-            Assert.AreEqual(sut.Value, result);
+            Assert.AreEqual(sut.Value(), result);
 
         }
 
@@ -34,7 +34,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType2));
             sut.AddNumber(op3);
 
-            Assert.AreEqual(sut.Value, result);
+            Assert.AreEqual(sut.Value(), result);
         }
 
         [TestCase(3, CalcOperatorType.Addition)] // 3 +
@@ -45,7 +45,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType));
 
             double x;
-            var ex = Assert.Throws<TokenException>(() => x = sut.Value);
+            var ex = Assert.Throws<TokenException>(() => x = sut.Value());
             Assert.AreEqual("Not enough values to perform operation.", ex.Message);
         }
 
@@ -59,8 +59,22 @@ namespace CalcEngineTest
             sut.AddNumber(op3);
 
             double x;
-            var ex = Assert.Throws<TokenException>(() => x = sut.Value);
+            var ex = Assert.Throws<TokenException>(() => x = sut.Value());
             Assert.AreEqual("Too many remaining operands.", ex.Message);
+        }
+
+        [TestCase(1, CalcOperatorType.Division, 3, 2, 0.33)] // 1 / 3
+        [TestCase(1, CalcOperatorType.Division, 6, 5, 0.16667)] // 1 / 6
+        [TestCase(-2, CalcOperatorType.Division, 3, 2, -0.67)] // 1 / 6
+        public void Precision(double op1, CalcOperatorType calcType, double op2, int precision, double expected)
+        {
+            var sut = new CalculatorRPN();
+            sut.AddNumber(op1);
+            sut.AddOperator(new CalcOperator(calcType));
+            sut.AddNumber(op2);
+
+            Assert.AreEqual(expected, sut.Value(precision));
+
         }
 
     }

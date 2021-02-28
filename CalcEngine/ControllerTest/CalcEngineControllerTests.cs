@@ -31,5 +31,17 @@ namespace ControllerTest
             Assert.AreEqual(((BadRequestObjectResult)resp).Value, expectedValue);
 
         }
+
+        [TestCase("1 / 3", 2, 200, 0.33)]
+        [TestCase("2 / -3", 4, 200, -0.6667)]
+        public void GetSuccessPrecsision(string calculation, int precision, int expectedCode, double expectedValue)
+        {
+            var sut = new CalcEngineController();
+            var resp = sut.Get(calculation, precision);
+
+            Assert.AreEqual(((OkObjectResult)resp).StatusCode, expectedCode);
+            Assert.AreEqual(((OkObjectResult)resp).Value, expectedValue);
+
+        }
     }
 }

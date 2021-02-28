@@ -16,13 +16,13 @@ namespace CalcEngine.Controllers
     {
 
         [HttpGet]
-        public ActionResult Get(string expr)
+        public ActionResult Get(string expr, int? precision = null)
         {
             try
             {
                 var parser = new Parser();
                 var calculator = new CalculatorRPN();
-                var retValue = Calculate(expr, parser, calculator);
+                var retValue = Calculate(expr, parser, calculator, precision);
 
                 return Ok(retValue);
 
@@ -40,7 +40,7 @@ namespace CalcEngine.Controllers
                     var parser = new Parser();
                     var calculator = new CalculatorAPI();
                     // Try the calculation again by injecting a calculator object to this function that uses the third-party API
-                    var retValue = Calculate(expr, parser, calculator);
+                    var retValue = Calculate(expr, parser, calculator, precision);
 
                     return Ok(retValue);
                 }
@@ -52,7 +52,7 @@ namespace CalcEngine.Controllers
 
         }
 
-        private double Calculate(string calculation, IParser parser, ICalculator calculator)
+        private double Calculate(string calculation, IParser parser, ICalculator calculator, int? precision)
         {
             ArrayList tokens = parser.Parse(calculation);
 
@@ -72,7 +72,7 @@ namespace CalcEngine.Controllers
                 }
             }
 
-            return calculator.Value;
+            return calculator.Value(precision);
 
         }
     }

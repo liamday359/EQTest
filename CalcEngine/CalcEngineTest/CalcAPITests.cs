@@ -18,7 +18,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType));
             sut.AddNumber(op2);
 
-            Assert.AreEqual(sut.Value, result);
+            Assert.AreEqual(sut.Value(), result);
 
         }
 
@@ -33,7 +33,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType2));
             sut.AddNumber(op3);
 
-            Assert.AreEqual(sut.Value, result);
+            Assert.AreEqual(sut.Value(), result);
         }
 
         [TestCase(5, CalcOperatorType.Addition, 1, CalcOperatorType.Multiplication, 4, 9)] // 5 + 1 * 4
@@ -45,7 +45,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType1));
             sut.AddNumber(op2);
 
-            var ex = Assert.Throws<TokenException>(() => sut.AddOperator(new CalcOperator(calcType2)));
+            var ex = Assert.Throws<CalculatorException>(() => sut.AddOperator(new CalcOperator(calcType2)));
             Assert.AreEqual("API does not support BEDMAS processing.", ex.Message);
 
         }
@@ -59,7 +59,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType));
 
             double x;
-            var ex = Assert.Throws<System.AggregateException>(() => x = sut.Value);
+            var ex = Assert.Throws<System.AggregateException>(() => x = sut.Value());
             Assert.AreEqual("One or more errors occurred. (Response status code does not indicate success: 400 (Bad Request).)", ex.Message);
         }
 
@@ -73,8 +73,23 @@ namespace CalcEngineTest
             sut.AddNumber(op3);
 
             double x;
-            var ex = Assert.Throws<System.AggregateException>(() => x = sut.Value);
+            var ex = Assert.Throws<System.AggregateException>(() => x = sut.Value());
             Assert.AreEqual("One or more errors occurred. (Response status code does not indicate success: 400 (Bad Request).)", ex.Message);
         }
+
+        [TestCase(1, CalcOperatorType.Division, 3, 2, 0.33)] // 1 / 3
+        [TestCase(1, CalcOperatorType.Division, 6, 5, 0.16667)] // 1 / 6
+        [TestCase(-2, CalcOperatorType.Division, 3, 2, -0.67)] // 1 / 6
+        public void Precision(double op1, CalcOperatorType calcType, double op2, int precision, double expected)
+        {
+            var sut = new CalculatorAPI();
+            sut.AddNumber(op1);
+            sut.AddOperator(new CalcOperator(calcType));
+            sut.AddNumber(op2);
+
+            Assert.AreEqual(expected, sut.Value(precision));
+
+        }
+
     }
 }

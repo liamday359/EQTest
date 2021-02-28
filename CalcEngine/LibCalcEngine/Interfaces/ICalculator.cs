@@ -7,7 +7,7 @@ namespace LibCalcEngine
     {
         void AddNumber(double numberIn);
         void AddOperator(CalcOperator operatorIn);
-        double Value { get; }
+        double Value(int? precision = null);
     }
 
 }
