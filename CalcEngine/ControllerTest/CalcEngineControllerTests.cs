@@ -16,8 +16,8 @@ namespace ControllerTest
             var sut = new CalcEngineController();
             var resp = sut.Get(calculation);
 
-            Assert.AreEqual(((OkObjectResult)resp).StatusCode, expectedCode);
-            Assert.AreEqual(((OkObjectResult)resp).Value, expectedValue);
+            Assert.AreEqual(expectedCode, ((OkObjectResult)resp).StatusCode);
+            Assert.AreEqual(expectedValue, ((OkObjectResult)resp).Value);
 
         }
 
@@ -27,8 +27,8 @@ namespace ControllerTest
             var sut = new CalcEngineController();
             var resp = sut.Get(calculation);
 
-            Assert.AreEqual(((BadRequestObjectResult)resp).StatusCode, expectedCode);
-            Assert.AreEqual(((BadRequestObjectResult)resp).Value, expectedValue);
+            Assert.AreEqual(expectedCode, ((BadRequestObjectResult)resp).StatusCode);
+            Assert.AreEqual(expectedValue, ((BadRequestObjectResult)resp).Value);
 
         }
 
@@ -39,8 +39,8 @@ namespace ControllerTest
             var sut = new CalcEngineController();
             var resp = sut.Get(calculation, precision);
 
-            Assert.AreEqual(((OkObjectResult)resp).StatusCode, expectedCode);
-            Assert.AreEqual(((OkObjectResult)resp).Value, expectedValue);
+            Assert.AreEqual(expectedCode, ((OkObjectResult)resp).StatusCode);
+            Assert.AreEqual(expectedValue, ((OkObjectResult)resp).Value);
 
         }
     }

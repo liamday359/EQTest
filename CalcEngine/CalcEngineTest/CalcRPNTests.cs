@@ -10,14 +10,14 @@ namespace CalcEngineTest
         [TestCase(1, CalcOperatorType.Subtraction, -1, 2)] // 1 - -1
         [TestCase(3.2, CalcOperatorType.Multiplication, 20, 64)] // 3.2 * 20
         [TestCase(6, CalcOperatorType.Division, 0.5, 12)] // 6 / 0.5
-        public void TwoOperands(double op1, CalcOperatorType calcType, double op2, double result)
+        public void TwoOperands(double op1, CalcOperatorType calcType, double op2, double expected)
         {
             var sut = new CalculatorRPN();
             sut.AddNumber(op1);
             sut.AddOperator(new CalcOperator(calcType));
             sut.AddNumber(op2);
 
-            Assert.AreEqual(sut.Value(), result);
+            Assert.AreEqual(expected, sut.Value());
 
         }
 
@@ -25,7 +25,7 @@ namespace CalcEngineTest
         [TestCase(5, CalcOperatorType.Addition, 1, CalcOperatorType.Multiplication, 4, 9)] // 5 + 1 * 4
         [TestCase(1, CalcOperatorType.Multiplication, 4, CalcOperatorType.Addition, 5, 9)] // 1 * 4 + 5
         [TestCase(10, CalcOperatorType.Subtraction, 4, CalcOperatorType.Division, 2, 8)] // 10 - 4 / 2
-        public void ThreeOperands(double op1, CalcOperatorType calcType1, double op2, CalcOperatorType calcType2, double op3, double result)
+        public void ThreeOperands(double op1, CalcOperatorType calcType1, double op2, CalcOperatorType calcType2, double op3, double expected)
         {
             var sut = new CalculatorRPN();
             sut.AddNumber(op1);
@@ -34,7 +34,7 @@ namespace CalcEngineTest
             sut.AddOperator(new CalcOperator(calcType2));
             sut.AddNumber(op3);
 
-            Assert.AreEqual(sut.Value(), result);
+            Assert.AreEqual(expected, sut.Value());
         }
 
         [TestCase(3, CalcOperatorType.Addition)] // 3 +

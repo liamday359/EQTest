@@ -21,10 +21,10 @@ namespace CalcEngineTest
             var sut = new Parser();
             var tokenList = sut.Parse(parseString);
 
-            Assert.AreEqual(tokenList.Count, 3);
-            Assert.AreEqual(tokenList[0], op1);
-            Assert.AreEqual(((CalcOperator)tokenList[1]).OperatorType, calcType);
-            Assert.AreEqual(tokenList[2], op2);
+            Assert.AreEqual(3, tokenList.Count);
+            Assert.AreEqual(op1, tokenList[0]);
+            Assert.AreEqual(calcType, ((CalcOperator)tokenList[1]).OperatorType);
+            Assert.AreEqual(op2, tokenList[2]);
 
         }
 
@@ -36,12 +36,12 @@ namespace CalcEngineTest
             var sut = new Parser();
             var tokenList = sut.Parse(parseString);
 
-            Assert.AreEqual(tokenList.Count, 5);
-            Assert.AreEqual(tokenList[0], op1);
-            Assert.AreEqual(((CalcOperator)tokenList[1]).OperatorType, calcType1);
-            Assert.AreEqual(tokenList[2], op2);
-            Assert.AreEqual(((CalcOperator)tokenList[3]).OperatorType, calcType2);
-            Assert.AreEqual(tokenList[4], op3);
+            Assert.AreEqual(5, tokenList.Count);
+            Assert.AreEqual(op1, tokenList[0]);
+            Assert.AreEqual(calcType1, ((CalcOperator)tokenList[1]).OperatorType);
+            Assert.AreEqual(op2, tokenList[2]);
+            Assert.AreEqual(calcType2, ((CalcOperator)tokenList[3]).OperatorType);
+            Assert.AreEqual(op3, tokenList[4]);
 
         }
 
