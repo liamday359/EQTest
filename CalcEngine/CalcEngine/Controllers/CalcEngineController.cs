@@ -16,7 +16,7 @@ namespace CalcEngine.Controllers
     {
 
         [HttpGet]
-        public ActionResult Get(string expr, int? precision = null)
+        public ActionResult Get(string expr, int? precision = 2)
         {
             try
             {

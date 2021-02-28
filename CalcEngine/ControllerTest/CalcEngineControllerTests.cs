@@ -34,10 +34,19 @@ namespace ControllerTest
 
         [TestCase("1 / 3", 2, 200, 0.33)]
         [TestCase("2 / -3", 4, 200, -0.6667)]
-        public void GetSuccessPrecsision(string calculation, int precision, int expectedCode, double expectedValue)
+        [TestCase("1/6", null, 200, 0.17)]
+        public void GetSuccessPrecsision(string calculation, int? precision, int expectedCode, double expectedValue)
         {
+            ActionResult resp = null;
             var sut = new CalcEngineController();
-            var resp = sut.Get(calculation, precision);
+            if (precision.HasValue)
+            {
+                resp = sut.Get(calculation, precision);
+            }
+            else
+            {
+                resp = sut.Get(calculation);
+            }
 
             Assert.AreEqual(expectedCode, ((OkObjectResult)resp).StatusCode);
             Assert.AreEqual(expectedValue, ((OkObjectResult)resp).Value);

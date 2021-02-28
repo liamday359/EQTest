@@ -23,7 +23,7 @@ namespace CalcClient
             var config = builder.Build();
             var baseAddress = config["BaseAddress"];
 
-            Console.WriteLine("Enter precision: (leave blank for no precision)");
+            Console.WriteLine("Enter precision: [2]");
             var enteredprecision = Console.ReadLine();
             if (int.TryParse(enteredprecision, out parsedprecision))
             {
