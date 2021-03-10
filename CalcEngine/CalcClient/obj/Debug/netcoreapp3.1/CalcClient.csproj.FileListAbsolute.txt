@@ -1,0 +1,13 @@
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.csprojAssemblyReference.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.AssemblyInfoInputs.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.AssemblyInfo.cs
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.csproj.CoreCompileInputs.cache
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.exe
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.deps.json
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.runtimeconfig.json
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.runtimeconfig.dev.json
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.dll
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\bin\Debug\netcoreapp3.1\CalcClient.pdb
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.dll
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.pdb
+C:\Users\Liam\EQTest\EQTest\CalcEngine\CalcClient\obj\Debug\netcoreapp3.1\CalcClient.genruntimeconfig.cache

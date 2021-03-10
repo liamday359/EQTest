@@ -1,0 +1,93 @@
+{
+  "version": 3,
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "LibCalcEngine/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/LibCalcEngine.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/LibCalcEngine.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "LibCalcEngine/1.0.0": {
+      "type": "project",
+      "path": "../LibCalcEngine/LibCalcEngine.csproj",
+      "msbuildProject": "../LibCalcEngine/LibCalcEngine.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    ".NETCoreApp,Version=v3.1": [
+      "LibCalcEngine >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\Liam\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\CalcEngine\\CalcEngine.csproj",
+      "projectName": "CalcEngine",
+      "projectPath": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\CalcEngine\\CalcEngine.csproj",
+      "packagesPath": "C:\\Users\\Liam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\CalcEngine\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\Liam\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "netcoreapp3.1"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "targetAlias": "netcoreapp3.1",
+          "projectReferences": {
+            "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\LibCalcEngine\\LibCalcEngine.csproj": {
+              "projectPath": "C:\\Users\\Liam\\EQTest\\EQTest\\CalcEngine\\LibCalcEngine\\LibCalcEngine.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "netcoreapp3.1": {
+        "targetAlias": "netcoreapp3.1",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.AspNetCore.App": {
+            "privateAssets": "none"
+          },
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.102\\RuntimeIdentifierGraph.json"
+      }
+    }
+  }
+}
